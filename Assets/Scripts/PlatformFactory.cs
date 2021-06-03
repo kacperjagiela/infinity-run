@@ -10,12 +10,12 @@ public class PlatformFactory : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("createPlatform", 2f, 0.3f);
+        InvokeRepeating("createPlatform", 1.5f, 0.5f);
     }
 
     void createPlatform()
     {
-        Instantiate(platformPrefab, new Vector3(0, 0, numberOfPlatforms * 29.9F * -1), Quaternion.identity);
+        Instantiate(platformPrefab, new Vector3(0, 0, numberOfPlatforms * 29.9F), Quaternion.identity);
         numberOfPlatforms++;
     }
 }

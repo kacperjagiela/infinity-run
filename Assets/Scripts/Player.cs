@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
 
     void handleMovement()
     {
-        transform.position = transform.position + new Vector3(-movementSpeed * walkInput * Time.deltaTime, 0, 0);
+        transform.position = transform.position + new Vector3(movementSpeed * walkInput * Time.deltaTime, 0, 0);
     }
 
     void handleSpeedUp()
     {
-        transform.position = transform.position + new Vector3(0, 0, -movementSpeed * Time.deltaTime);
+        transform.position = transform.position + new Vector3(0, 0, movementSpeed * Time.deltaTime);
     }
 }

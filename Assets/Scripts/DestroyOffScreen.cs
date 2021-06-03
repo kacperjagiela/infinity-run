@@ -16,7 +16,7 @@ public class DestroyOffScreen : MonoBehaviour
         var playerPosition = player.transform.position;
         var objectPosition = gameObject.transform.position;
 
-        if (objectPosition.z >= playerPosition.z + 90f)
+        if (playerPosition.z - 90f >= objectPosition.z)
         {
             Destroy(gameObject);
         }
