@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
     private float walkInput;
-    public float movementSpeed = 10f;
+    public float movementSpeed = 30f;
 
     private void Awake()
     {
@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyMovement();
+        handleMovement();
+        handleSpeedUp();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -24,8 +25,13 @@ public class Player : MonoBehaviour
         walkInput = context.ReadValue<float>();
     }
 
-    void ApplyMovement()
+    void handleMovement()
     {
-        playerRigidbody.AddForce(Vector3.left * movementSpeed * walkInput);
+        transform.position = transform.position + new Vector3(-movementSpeed * walkInput * Time.deltaTime, 0, 0);
+    }
+
+    void handleSpeedUp()
+    {
+        transform.position = transform.position + new Vector3(0, 0, -movementSpeed * Time.deltaTime);
     }
 }
