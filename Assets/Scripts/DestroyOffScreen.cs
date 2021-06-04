@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DestroyOffScreen : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
 
     private void Awake()
     {

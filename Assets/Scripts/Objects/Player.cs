@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody>();
+        Debug.Log(Manager.Instance.points);
     }
 
     private void FixedUpdate()
